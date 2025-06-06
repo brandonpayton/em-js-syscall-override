@@ -33,10 +33,10 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    printf("PID %d: Successfully acquired write lock. Holding for 3 seconds...\n", pid);
+    printf("PID %d: Successfully acquired write lock. Holding for 1 second...\n", pid);
 
     // Simulate work while holding the lock
-    sleep(3);
+    sleep(1);
 
     // 4. Release the lock
     fl.l_type = F_UNLCK; // Unlock
