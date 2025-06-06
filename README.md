@@ -5,3 +5,9 @@ This is a simple project to try to reproduce the following error when overriding
 ```
 Error: null function or function signature mismatch
 ```
+
+Run the following to test:
+
+```bash
+./build.sh && node test.js
+```
