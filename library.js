@@ -14,10 +14,14 @@ const LibraryForFileLocking = {
 	],
 	__syscall_fcntl64__sig: LibraryManager.library.__syscall_fcntl64__sig,
 	__syscall_fcntl64: async function __syscall_fcntl64(fd, cmd, varargs) {
+		console.log("___syscall_fcntl64", fd, cmd, varargs);
 		return Asyncify.handleAsync(async () => {
+			console.log("default_fcntl64.fn", fd, cmd, varargs);
 			return Promise.resolve(
 				default_fcntl64.fn(fd, cmd, varargs)
-			);
+			).finally(() => {
+				console.log("___syscall_fcntl64.finally", fd, cmd, varargs);
+			});
 		});
 	},
 };
